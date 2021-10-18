@@ -7,6 +7,8 @@ import org.zerock.domain.FacilityVO;
 public interface FacilityMapper {
 
 	List<FacilityVO> getList();
+
+	List<FacilityVO> getList2(String aptname);
 	
 	int insert(FacilityVO facilityVO);
 	

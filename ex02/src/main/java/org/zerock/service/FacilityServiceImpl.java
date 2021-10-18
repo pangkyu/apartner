@@ -42,6 +42,13 @@ public class FacilityServiceImpl implements FacilityService{
 		return facilityMapper.delete(fac_bno);
 	}
 
+
+	@Override
+	public List<FacilityVO> getList2(String aptname) {
+		// TODO Auto-generated method stub
+		return facilityMapper.getList2(aptname);
+	}
+
 	@Override
 	public List<FacilityVO> getList() {
 		// TODO Auto-generated method stub

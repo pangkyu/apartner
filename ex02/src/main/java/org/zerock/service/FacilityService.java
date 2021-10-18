@@ -14,6 +14,7 @@ public interface FacilityService {
 	
 	int remove(Long fac_bno);
 	
-	List<FacilityVO> getList();
+	List<FacilityVO> getList2(String aptname);
 	
+	List<FacilityVO> getList();
 }

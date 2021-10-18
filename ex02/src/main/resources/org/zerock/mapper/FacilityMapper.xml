@@ -9,9 +9,14 @@
 		select * from info_facility order by fac_bno desc
 	</select>
 
+	<select id="getList2" resultType="org.zerock.domain.FacilityVO">
+		select * from info_facility where fac_aptname = #{fac_aptname}
+		order by fac_bno desc
+	</select>
+
 	<insert id="insert">
-		insert into info_facility (fac_bno, fac_name, fac_lat, fac_lng, fac_admin, fac_numperson, fac_usingperson, fac_aptname)
-		values (seq_apart.nextval, #{fac_name},#{fac_lat},#{fac_lng}, #{fac_admin}, #{fac_numperson}, #{fac_usingperson}, #{fac_aptname})
+		insert into info_facility (fac_bno, fac_name, fac_lat, fac_lng, fac_admin, fac_numperson, fac_usingperson, fac_aptname, fac_info, fac_opentime, fac_closetime)
+		values (seq_facility.nextval, #{fac_name},#{fac_lat},#{fac_lng}, #{fac_admin}, #{fac_numperson}, #{fac_usingperson}, #{fac_aptname}, #{fac_info}, #{fac_opentime}, #{fac_closetime})
 	</insert>
 	
 	<select id="read" resultType="org.zerock.domain.FacilityVO">

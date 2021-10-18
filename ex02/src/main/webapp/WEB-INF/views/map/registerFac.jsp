@@ -19,7 +19,6 @@
 				        </button>
 				      </div>
 				      <div class="modal-body">
-				        	<form action="/map/registerFacility" method="post">
 				        	    <div class="form-group">
 									<label>시설물 이름을 입력하세요</label>
                                 	<input class="form-control" name = "fac_name" id="fac_name">
@@ -27,6 +26,34 @@
                            		<div class="form-group">
 									<label>아파트 이름</label>
                                 	<input class="form-control" name = "fac_aptname" id="fac_aptname" value="${apt_name }" readonly>
+                                </div>
+                                <div class="form-group">
+                                	<label>오픈 시간</label>
+                                    <select name="fac_opentime" id="openhour">
+										<c:forEach var="i" begin="00" end="23">
+										  <option value="${i}">${i}</option>
+										</c:forEach>
+								    </select>
+								    <select id="openmin">
+								    	<option>00</option>
+								    	<option>30</option>
+								    </select>
+                                </div>
+                                <div class="form-group">
+                                	<label>클로징 시간</label>
+                                    <select name="fac_closetime" id="closehour">
+								        <c:forEach var="i" begin="00" end="23">
+										  <option value="${i}">${i}</option>
+										</c:forEach>
+								    </select>
+								    <select id="closemin">
+								    	<option>00</option>
+								    	<option>30</option>
+								    </select>
+								</div>
+                                <div class="form-group">
+									<label>보여줄 시설물 정보(시간, 특이사항 등)</label>
+                                	<input class="form-control" name = "fac_info" id="fac_aptname">
                                 </div>
 								<div>
 									<label>최대 인원 수</label> 
@@ -37,9 +64,9 @@
                                 	<input class="form-control" name = "fac_lng" id="fac_lng"  type="hidden">
 	                               	<input class="form-control" name = "fac_admin" type="hidden" value = "user00">
                                 </div>
-                                <button type="submit" class="btn btn-default">Submit Button</button>
+                                <button type="submit" class="btn btn-default" onclick="submitForm()">Submit Button</button>
                                 <button type="reset" class="btn btn-default">Reset Button</button>
-                            </form>
+                     
 				      </div>
 				    </div>
 				  </div>
@@ -48,6 +75,33 @@
 	<input id="hidden_lng" type="hidden" value="${getApart.apt_lng }">
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=985f52f2cde50dbe19ca2aa591157924&libraries=services"></script>
 <script>
+function submitForm(){
+	$.ajax({
+ 		url : "/map/registerFacility",
+ 		type : "post",
+ 		dataType : "text",
+ 		data : {
+	 		"fac_name" : $('input[name=fac_name]').val(),
+ 			"fac_lat" : $('#hidden_lat').val(),
+ 			"fac_lng" : $('#hidden_lng').val(),
+	 		"fac_admin" : $('input[name=fac_admin]').val(),
+ 			"fac_numperson" : $('input[name=fac_numperson]').val(),
+ 			"fac_usingperson" : 0,
+ 			"fac_aptname" : $('input[name=fac_aptname]').val(),
+ 			"fac_info" : $('input[name=fac_info]').val(),
+ 			"fac_opentime" : $('#openhour').val() + ":" + $('#openmin').val(),
+ 			"fac_closetime" : $('#closehour').val() + ":" + $('#closemin').val()
+ 		},
+ 		success : function(data) {
+ 			location.href="/map/facilityList";
+ 			alert("시설물을 등록했습니다.");
+ 		},
+ 		error : function(error) {
+ 			alert("error");
+ 		}
+ 	});
+}
+
 $(document).ready(function(){
 	$('#fac_numperson').spinner();
 });
