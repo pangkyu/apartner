@@ -325,23 +325,23 @@
                             <!-- /input-group -->
                         </li>
                         <li>
-                            <a href="./map/viewMap"><i class="fa fa-dashboard fa-fw"></i> Find my APT</a>
+                            <a href="/map/viewMap"><i class="fa fa-dashboard fa-fw"></i> Find my APT</a>
                            	
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Charts<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> 시설물 등록(관리자)<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="flot.html">Flot Charts</a>
+                                    <a href="/map/viewMap">아파트 등록</a>
                                 </li>
                                 <li>
-                                    <a href="morris.html">Morris.js Charts</a>
+                                    <a href="/map/viewApartList">시설물 등록</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
-                            <a href="tables.html"><i class="fa fa-table fa-fw"></i> Tables</a>
+                            <a href="/reserve/selectApart"><i class="fa fa-table fa-fw"></i>예약(user)</a>
                         </li>
                         <li>
                             <a href="forms.html"><i class="fa fa-edit fa-fw"></i> Forms</a>

@@ -48,8 +48,21 @@ create table info_facility (
   regdate date default sysdate,
   fac_opentime varchar(200) not null,
   fac_closetime varchar(200) not null,
-  PRIMARY KEY(fac_bno,fac_name,fac_aptname),
+  PRIMARY KEY(fac_name,fac_aptname),
   CONSTRAINT info_facility_FK FOREIGN KEY(fac_aptname)
   REFERENCES info_apart(apt_name) ON DELETE CASCADE
 );
 alter sequence seq_facility nocache;
+
+/*예약중 정보*/
+create table reserveFac (
+  fac_name varchar2(200) not null,
+  fac_aptname varchar2(200) not null,
+  userId varchar2(200) not null,
+  start_time varchar(200) not null,
+  finish_time varchar(200) not null,
+  reserve_date date not null,
+  PRIMARY KEY(fac_name,fac_aptname, userId),
+  CONSTRAINT reserveFac_FK FOREIGN KEY(fac_name, fac_aptname)
+  REFERENCES info_facility(fac_name, fac_aptname) ON DELETE CASCADE
+);
