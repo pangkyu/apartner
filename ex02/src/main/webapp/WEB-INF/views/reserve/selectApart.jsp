@@ -4,6 +4,11 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@include file="../includes/header.jsp" %>
+<head>
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	  <script src = "../includes/calendar.js"></script>
+	  <script src = "../includes/cal.css"></script>
+</head>
 
             <div class="row">
                 <div class="col-lg-12">
@@ -53,6 +58,8 @@
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
+            
+            <div id = "calendarForm"></div>
             
             <div id="myModal" class="modal" tabindex="-1" role="dialog">
 				  <div class="modal-dialog" role="document">
