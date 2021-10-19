@@ -17,7 +17,8 @@
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            DataTables Advanced Tables
+                            Register or Remove 선택 후 submit 버튼을 누르세요
+                            <button id = "submitBtn" type = "button" class = "btn btn-xs pull-right submitBtn">Submit</button>
                         	<button id = "removeBtn" type = "button" class = "btn btn-xs pull-right">Remove</button>
                             <button id = "regBtn" type="button" class="btn btn-xs pull-right">Register</button>
                         </div>

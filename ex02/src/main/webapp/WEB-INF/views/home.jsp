@@ -6,10 +6,7 @@
 	<title>Home</title>
 </head>
 <body>
-<h1>
-	Hello world!  
-</h1>
+	<img src ="https://i.ibb.co/c1wk0rv/homepic.png" style = " display : block; margin :0px auto; width : 100vh; height : 70vh; background-repeat : no-repeat;"/>
 
-<P>  The time on the server is ${serverTime}.</P>
 </body>
 </html>

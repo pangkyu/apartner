@@ -14,6 +14,8 @@
 
     <title>Apartner - APT Management System</title>
 
+	<!-- add css -->
+	<link href = "./add.css"/>
     <!-- Bootstrap Core CSS -->
     <link href="/resources/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
