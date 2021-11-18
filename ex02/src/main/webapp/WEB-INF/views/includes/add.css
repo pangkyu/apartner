@@ -1,0 +1,7 @@
+@charset "UTF-8";
+
+<!--부트스트랩 이외에 추가적으로 적용되는 css 파일 -->
+
+.submitBtn{
+	background-color : #EDC96D;
+}
